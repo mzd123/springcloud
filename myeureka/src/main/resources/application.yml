@@ -1,0 +1,21 @@
+server:
+  port: 8101
+eureka:
+  instance:
+    #注册中心的ip地址
+    hostname: 127.0.0.1
+  client:
+    service-url:
+      #注册中心地址
+      defaultZone: http://${eureka.instance.hostname}:8101/eureka
+      #是否将自己注册到注册中心去
+    register-with-eureka: false
+     ###是否获取最新的注册信息
+    fetch-registry: false
+  server:
+    ##是否关闭自我保护机制
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 2000
+
+
+

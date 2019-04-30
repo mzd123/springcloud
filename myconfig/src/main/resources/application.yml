@@ -1,0 +1,18 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8101/eureka
+
+spring:
+   application:
+     name: mzd-config-server
+   cloud:
+     config:
+        server:
+           git:
+             uri: https://github.com/mzd123/springcloud-config.git
+             search-paths:
+             - mzd-test
+        label: master
+server:
+  port: 8888
