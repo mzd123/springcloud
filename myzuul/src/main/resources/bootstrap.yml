@@ -3,12 +3,12 @@ server:
 spring:
   application:
     name: mzd-zuul
-#  cloud:
-#    config:
-#      profile: dev
-#      discovery:
-#        service-id: mzd-config-server
-#        enabled: true
+  cloud:
+    config:
+      profile: dev
+      discovery:
+        service-id: mzd-config-server
+        enabled: true
 
   http:
       encoding:
@@ -16,16 +16,17 @@ spring:
         enabled: true
         force: true
 # 路由规则配置
-zuul:
-  routes:
-    order:
-      path: /mzd-order/**
-      serviceId: mzd-order
+#zuul:
+#  ignored-services: "*"
+#  routes:
+#    order:
+#      path: /mzd-order/**
+#      serviceId: mzd-order
 #    user:
 #      path: /mzd-user/**
 #      serviceId: mzd-user
 
-#API网关也将作为一个服务注册到eureka-server上
+
 
 eureka:
   client:
@@ -40,11 +41,11 @@ eureka:
      lease-expiration-duration-in-seconds: 2
 
 # 开启刷新配置文件
-#management:
-#  endpoints:
-#    web:
-#     exposure:
-#       include: "*"
+management:
+  endpoints:
+    web:
+     exposure:
+       include: "*"
 
 ribbon:
    # 指的是建立连接所用的时间

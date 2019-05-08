@@ -19,10 +19,10 @@ public class MyzuulApplication {
     }
 
 
-//    @RefreshScope
-//    @ConfigurationProperties("zuul")
-//    public ZuulProperties getZuulProperties() {
-//        return new ZuulProperties();
-//    }
+    @RefreshScope
+    @ConfigurationProperties("zuul")
+    public ZuulProperties getZuulProperties() {
+        return new ZuulProperties();
+    }
 
 }
